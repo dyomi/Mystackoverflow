@@ -1,0 +1,264 @@
+:root {
+    --main-color: #FDDB6D;
+}
+
+body {
+}
+
+div.content-nav{
+    margin: 0 auto;
+    width: 1024px;
+    display: flex;
+
+}
+
+#page-layout {
+    display: flex;
+    margin: 30px auto;
+    width: 1024px;
+}
+
+nav {
+    box-shadow: 0 10px 10px -5px rgba(109, 114, 120, 0.25);
+}
+
+.form-control:focus{
+    box-shadow: 0 0 10px 0 rgba(109, 114, 120, 0.25);
+    border-color: var(--main-color);
+}
+
+.form-control:focus + button{
+    box-shadow: 0 0 10px 0 rgba(109, 114, 120, 0.25);
+    border-color: var(--main-color);
+}
+
+nav.navbar a.navbar-brand{
+    color: #FB607F;
+}
+
+a {
+    color: #00538A;
+}
+
+button.btn {
+    height: 38px;
+}
+
+input.form-control.mr-0{
+    width: calc(100% - 62px);
+    border-radius: 19px 0 0 19px;
+}
+
+div.btn-group {
+    display: flex;
+    width: 214px;
+    justify-content: flex-end;
+}
+
+.dropdown-menu {
+    top: calc(100% + 10px)
+}
+
+.navbar__input{
+    border-radius: 19px 0 0 19px;
+}
+
+.navbar__button{
+    vertical-align: center;
+    border-radius: 0 19px 19px 0;
+    border-left: none;
+    background-color: white;
+    border-color: #ced4da;
+}
+
+.navbar__button svg{
+    fill: var(--main-color);
+}
+
+.navbar__button:hover svg, .navbar__button:active svg {
+    fill: white;
+}
+
+.navbar__button:hover, .navbar__button:active {
+    border-color: var(--main-color) !important;
+    background-color: var(--main-color) !important;
+}
+
+.btn svg{
+    display: block;
+}
+
+.navbar__button:focus {
+    box-shadow: 0 0 10px 0 var(--main-color) !important;
+}
+
+div#article-comments{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+div.article-author{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.sponge-bob-p {
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    margin-top: 32px;
+    width: 135px;
+}
+
+div.border.number {
+    color: #00538A;
+    margin: 5px 0;
+    width: 30px;
+    height: 30px;
+}
+
+div.counter{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-start;
+    width: 35px;
+    height: fit-content;
+}
+
+div.arrows {
+    display: flex;
+    flex-direction: column;
+}
+
+div.article{
+    display: flex;
+    flex-direction: column;
+    width: 625px;
+    margin: 0 20px;
+}
+
+p.text{
+    margin-bottom: 0;
+}
+
+button.learn-more{
+    color: #00538A;
+}
+
+div.tags-members{
+    width: 214px;
+}
+
+div.popular-tags{
+
+}
+
+div.tags{
+  display: flex;
+  flex-direction: column;
+}
+
+hr.line{
+    width: 780px;
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+div.comment{
+    display: flex;
+    flex-direction: column;
+}
+
+div.comment-author{
+    border: solid 2px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    width: 780px;
+}
+
+div.counter-comment{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-start;
+    width: 28px;
+    height: fit-content;
+}
+
+div.photo-rating{
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    width: 108px;
+}
+
+div.border.number.comment{
+    margin: 4px 0;
+    width: 24px;
+    height: 24px;
+}
+
+p.comment-text{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 625px;
+    margin: 0 35px 0 35px;
+}
+
+p.ns-author{
+    font-size: 15px;
+}
+
+p{
+    margin: 0;
+}
+
+div.tags-members p{
+    margin-bottom: 10px;
+}
+
+p.article-tags{
+    white-space: pre;
+}
+
+hr.line.answer{
+    margin-top: 10px;
+}
+
+textarea:focus{
+    outline: none;
+    box-shadow: 0 0 10px 0 rgba(109, 114, 120, 0.25);
+    border-color: var(--main-color);
+}
+
+textarea{
+    border-width: 1px;
+    font-family: monospace;
+    border-color: rgba(0, 0, 0, 0.1);
+    width: 780px;
+    margin-top: 10px;
+    resize: none;
+}
+
+button.btn.btn-primary.btn-sm{
+    border-radius: 15px 15px 15px 15px;
+    background-color: #00538A;
+    border-color: #00538A;
+    height: 30px;
+}
+
+button.btn.btn-primary.btn-sm.answer{
+    margin-top: 10px;
+}
+
+input.form-control{
+    border-radius: 0;
+}

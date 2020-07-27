@@ -1,0 +1,284 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta charset="UTF-8">
+    <title>MyStackoverflow</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet" type="text/css" href='{% static "core/css/index.css" %}'>
+</head>
+
+<body>
+<script>
+    let numAuthor = 0;
+    let numCom1 = 0;
+    let numCom2 = 0;
+
+    function incAuthor() {
+        numAuthor++;
+        const i = document.getElementById('num1');
+        i.textContent = numAuthor;
+        if (numAuthor >= 0)
+            i.style.color = '#00538A';
+    }
+    function decAuthor() {
+        numAuthor--;
+        const i = document.getElementById('num1');
+        i.textContent = numAuthor;
+        if (numAuthor < 0)
+            i.style.color = 'red';
+    }
+
+    function incCom1() {
+        numCom1++;
+        const i = document.getElementById('num2');
+        i.textContent = numCom1;
+        if (numCom1 >= 0)
+            i.style.color = '#00538A';
+    }
+    function decCom1() {
+        numCom1--;
+        const i = document.getElementById('num2');
+        i.textContent = numCom1;
+        if (numCom1 < 0)
+            i.style.color = 'red';
+    }
+
+    function incCom2() {
+        numCom2++;
+        const i = document.getElementById('num3');
+        i.textContent = numCom2;
+        if (numCom2 >= 0)
+            i.style.color = '#00538A';
+    }
+    function decCom2() {
+        numCom2--;
+        const i = document.getElementById('num3');
+        i.textContent = numCom2;
+        if (numCom2 < 0)
+            i.style.color = 'red';
+    }
+
+
+
+</script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="content-nav">
+        <a class="navbar-brand" href="#">MyStackoverflow</a>
+        <div class="col-6">
+            <form class="form-inline my-2  my-lg-0">
+                <input class="form-control mr-0 navbar__input" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 navbar__button" type="submit">
+                    <svg width="20" height="20" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                        <path fill-rule="evenodd"
+                              d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <div class="btn-group">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                Account
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <form class="px-4 py-3">
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                               placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                               placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                            <label class="form-check-label" for="dropdownCheck">
+                                Remember me
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">Sign in</button>
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">New around here? Sign up</a>
+                <a class="dropdown-item" href="#">Forgot password?</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div id="page-layout">
+    <div id="article-comments">
+        <div class="article-author">
+            <div class="author">
+                <div class="sponge-bob-p">
+                    <img class="sponge-bob"
+                         src="https://i.pinimg.com/736x/77/13/73/77137363f4e526ee4ad38461f1aa7e01.jpg"
+                         width="100" height="100" alt="lorem">
+                    <div class="counter">
+                        <svg onclick="incAuthor()" width="30px" height="30px" viewBox="0 0 16 16"
+                             class="bi bi-caret-up-fill border up-button"
+                             fill="#FDDB6D"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                        </svg>
+                        <div id="num1" class="border number">
+                            0
+                        </div>
+
+                        <svg onclick="decAuthor()" width="30px" height="30px" viewBox="0 0 16 16"
+                             class="bi bi-caret-down-fill border downn-button"
+                             fill="#FDDB6D"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="author-name"><p><a href="#">Наташа Лыбина</a></p></div>
+            </div>
+
+            <div class="article">
+                <h2>Pantone объявил главный цвет 2020 года</h2>
+                <p class="text" align="justify">Главным цветом 2020 года по версии Pantone стал классический синий
+                    (Classic
+                    Blue, 19-4052) –
+                    символ
+                    спокойствия и надежности. Исполнительный директор института Леатрис Эйсман рассказала, что согласно
+                    исследованиям, которые провели сотрудники института в разных странах, люди во всем мире одинаково
+                    положительно реагируют на этот цвет. «Сумрачный, слегка приглушенный синий означает окончание дня –
+                    время
+                    возвращаться домой, время, когда хочется тишины. Именно поэтому он ассоциируется с ощущением
+                    стабильности,
+                    постоянства и отсутствием тревоги», – добавляет Эйсман...
+                </p>
+                <button type="button" class="btn btn-link learn-more">...learn more</button>
+                <p class="article-tags">Tags: <a href="#">#мода</a> <a href="#">#pantone</a></p>
+            </div>
+        </div>
+        <hr class="line"/>
+        <div class="comment">
+            <div class="comment-author">
+                <div class="author-c">
+                    <div class="photo-rating">
+                        <img class="photo-author-comment"
+                             src="https://sun9-9.userapi.com/9Wxqlwe-Sxf6aEoOp6bBo944vtJkJG04WUYOlw/3Km_TSVVm7w.jpg"
+                             width="80" height="80" alt="lorem">
+                        <div class="counter-comment">
+                            <svg onclick="incCom1()" width="24px" height="24px" viewBox="0 0 16 16"
+                                 class="bi bi-caret-up-fill border up-button"
+                                 fill="#FDDB6D"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                            </svg>
+                            <div id="num2" class="border number comment">
+                                0
+                            </div>
+
+                            <svg onclick="decCom1()" width="24px" height="24px" viewBox="0 0 16 16"
+                                 class="bi bi-caret-down-fill border downn-button"
+                                 fill="#FDDB6D"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="author-name-comment"><p class="ns-author"><a href="#">Леатрис Эйс</a></p></div>
+                </div>
+
+                <p class="comment-text" align="justify">Мода часто является показателем того, что происходит в мире и
+                    вокруг нас. Мы понимаем, что нам нужны эти моменты покоя, чтобы компенсировать все потрясения,
+                    которые происходят в мире вокруг нас.
+                </p>
+            </div>
+            <div class="comment-author">
+                <div class="author-c">
+                    <div class="photo-rating">
+                        <img class="photo-author-comment"
+                             src="https://sun9-14.userapi.com/vf1VBCBvGyKur1Zmr0VlEEMDTDzCFj11HMAhWA/MyEzlxx-QYQ.jpg"
+                             width="80" height="80" alt="lorem">
+                        <div class="counter-comment">
+                            <svg onclick="incCom2()" width="24px" height="24px" viewBox="0 0 16 16"
+                                 class="bi bi-caret-up-fill border up-button"
+                                 fill="#FDDB6D"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                            </svg>
+                            <div id="num3" class="border number comment">
+                                0
+                            </div>
+
+                            <svg onclick="decCom2()" width="24px" height="24px" viewBox="0 0 16 16"
+                                 class="bi bi-caret-down-fill border downn-button"
+                                 fill="#FDDB6D"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="author-name-comment"><p class="ns-author"><a href="#">Sponge Bob</a></p></div>
+                </div>
+
+                <p class="comment-text" align="justify">Синий отличный цвет! А еще я люблю желтый и розовый. Мой друг
+                    Патрик как раз розового цвета. :)
+                </p>
+            </div>
+        </div>
+        <hr class="line answer"/>
+        <textarea placeholder="Enter your answer here.."></textarea>
+        <button type="submit" class="btn btn-primary btn-sm answer">Answer</button>
+    </div>
+
+
+    <div class="tags-members">
+        <div class="popular-tags">
+            <h3>Popular tags</h3>
+            <div class="tags">
+                <p><a href="#">#город</a></p>
+                <p><a href="#">#развлечения</a></p>
+                <p><a href="#">#мода</a></p>
+                <p><a href="#">#красота</a></p>
+            </div>
+        </div>
+        <div class="best-members">
+            <h3>Best members</h3>
+            <div class="tags">
+                <p><a href="#">Одри Хепберн</a></p>
+                <p><a href="#">Sponge Bob</a></p>
+                <p><a href="#">Моника Беллуччи</a></p>
+                <p><a href="#">Мадонна</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+<script>
+    const borderNum = document.getElementById('num1');
+    borderNum.textContent = numAuthor;
+
+
+</script>
+</body>
+</html>
